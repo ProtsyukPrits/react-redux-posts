@@ -10,7 +10,7 @@ const PostsExcerpt = ({ postId }) => {
   const post = useSelector(state => selectPostById(state, postId));
 
   return (
-    <article>
+    <article className="listBox">
       <h2>{post.title}</h2>
       <p className="excerpt">{post.body.substring(0, 75)}...</p>
       <p className="postCredit">
