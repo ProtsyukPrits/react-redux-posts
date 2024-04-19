@@ -22,18 +22,23 @@ const SinglePostPage = () => {
   }
 
   return (
-    <article>
-      <h3>{post.title}</h3>
-      <p>{post.body.substring(0, 100)}</p>
-      <p className="postCredit">
-        <Link className="editPost" to={`/post/edit/${post.id}`}>
-          Edit Post
-        </Link>
-        <PostAuthor userId={post.userId} />
-        <TimeAgo timestamp={post.date} />
-      </p>
-      <ReactionButtons post={post} />
-    </article>
+    <div className="singlePost">
+      <Link className="buttonGoBack" to={`/user/${post.userId}`}>
+        &#x21FD; Go Back
+      </Link>
+      <article>
+        <h3>{post.title}</h3>
+        <p>{post.body.substring(0, 100)}</p>
+        <p className="postCredit">
+          <Link className="editPost" to={`/post/edit/${post.id}`}>
+            Edit Post
+          </Link>
+          <PostAuthor userId={post.userId} />
+          <TimeAgo timestamp={post.date} />
+        </p>
+        <ReactionButtons post={post} />
+      </article>
+    </div>
   );
 };
 
