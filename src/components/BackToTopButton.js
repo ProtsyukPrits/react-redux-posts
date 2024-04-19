@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-// import './BackToTopButton.css'; // Підключаємо стилі для кнопки
 
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Функція, яка прокручує сторінку вгору
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -12,7 +10,6 @@ const BackToTopButton = () => {
     });
   };
 
-  // Функція, яка перевіряє, чи необхідно відображати кнопку
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
       setIsVisible(true);
@@ -21,7 +18,6 @@ const BackToTopButton = () => {
     }
   };
 
-  // Додаємо прослуховувач подій при монтажі компоненту
   React.useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
     return () => {
